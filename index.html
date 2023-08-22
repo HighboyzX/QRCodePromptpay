@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate QRCode | Highboyz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        min-height: 100vh;
+
+        background: #ededed;
+    }
+
+</style>
+<body>
+    <div class="panel mt-5 shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+
+        <div class="header-panel mb-5 mt-3 mx-2">
+            <h4>QR Code Promptpay Service</h4>
+        </div>
+
+        <div class="body-panel">
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fa-solid fa-phone"></i></span>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="promptpay" placeholder="หมายเลขพร้อมเพย์">
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fa-solid fa-sack-dollar"></i></span>
+                <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="amount" placeholder="จำนวนเงิน">
+            </div>
+            <div class="d-grid gap-2">
+                <button class="btn btn-sm btn-primary d-block" type="button" id="btnGenerate">สร้างคิวอาร์โค้ด</button>
+                <button class="btn btn-sm btn-danger d-block" type="button" id="btnClear">ล้างข้อมูล</button>
+            </div>
+            <div class="text-center" id="text-group">
+                <img id="imageQRCode" src="https://www.thai-frozen.or.th/Content/Images/empty-img.png" class="mt-4" style="max-width: 200px; object-fit: contain;">
+            </div>
+        </div>
+
+    </div>
+    <!-- <img src="" alt="..." style="width:500px;object-fit:contain;" id="imageQRCode"> -->
+
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="./app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
