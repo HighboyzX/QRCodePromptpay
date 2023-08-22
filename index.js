@@ -4,7 +4,6 @@ const generatePayload = require('promptpay-qr');
 const bodyParser = require('body-parser');
 const _ = require('lodash');
 const cors = require('cors');
-// const fs = require('fs');
 
 const app = express();
 
@@ -19,15 +18,6 @@ const server = app.listen(3030, () => {
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + "/index.html");
-    // fs.readFile('index.html', null,(err, data) => {
-    //     if(err){
-    //         res.writeHead(404);
-    //         res.write('Whoops! File not found!');
-    //     } else {
-    //         res.write('<h1 stlye="color:red;">TEST</h1>');
-    //     }
-    //     res.end();
-    // });
 });
 
 app.post('/generateQR', (req, res) => {

@@ -30,7 +30,8 @@ function clearData(){
     $('#promptpay').val('');
     $("#amount").val('');
     $("#imageQRCode").attr('src', 'https://www.thai-frozen.or.th/Content/Images/empty-img.png');
-    $('.divEl').remove();
+    $('#promptpayText').text('');
+    $('#amountText').text('');
 }
 function generateQRCode(){
     const promptpayVal = $('#promptpay').val();
@@ -43,23 +44,25 @@ function generateQRCode(){
             amount: amountVal
         }, success: function(res) {
             $("#imageQRCode").attr('src', res.resResult);
+            $('#promptpayText').text(promptpayVal);
+            $('#amountText').text(amountVal);
 
-            const divElPromtpay = $('<div></div>').addClass('divEl');
-            const divElAmount = $('<div></div>').addClass('divEl');
-            const labelPromtpay = $('<label></label>').text('บัญชีพร้อมเพย์ : ');
-            const labelAmount = $('<label></label>').text('จำนวนเงิน : ');
-            const spanBaht = $('<span></span>').text(' บาท');
-            const spanPromtpay = $('<span></span>').text(promptpayVal).css('color','blue');
-            const spanAmount = $('<span></span>').text(amountVal).css('color','blue');
-            labelPromtpay.append(spanPromtpay);
-            labelAmount.append(spanAmount);
-            labelAmount.append(spanBaht);
-            divElPromtpay.append(labelPromtpay);
-            divElAmount.append(labelAmount);
+            // const divElPromtpay = $('<div></div>').addClass('divEl');
+            // const divElAmount = $('<div></div>').addClass('divEl');
+            // const labelPromtpay = $('<label></label>').text('บัญชีพร้อมเพย์ : ');
+            // const labelAmount = $('<label></label>').text('จำนวนเงิน : ');
+            // const spanBaht = $('<span></span>').text(' บาท');
+            // const spanPromtpay = $('<span></span>').text(promptpayVal).css('color','blue');
+            // const spanAmount = $('<span></span>').text(amountVal).css('color','blue');
+            // labelPromtpay.append(spanPromtpay);
+            // labelAmount.append(spanAmount);
+            // labelAmount.append(spanBaht);
+            // divElPromtpay.append(labelPromtpay);
+            // divElAmount.append(labelAmount);
 
-            const textGroup = $('#text-group');
-            textGroup.append(divElPromtpay);
-            textGroup.append(divElAmount);
+            // const textGroup = $('#text-group');
+            // textGroup.append(divElPromtpay);
+            // textGroup.append(divElAmount);
 
         }, error: function(err) {
             console.log('[err]: ',err)
