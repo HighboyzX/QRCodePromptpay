@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
             res.writeHead(404);
             res.write('Whoops! File not found!');
         } else {
-            res.write(data);
+            res.write('<h1 stlye="color:red;">TEST</h1>');
         }
         res.end();
     });
