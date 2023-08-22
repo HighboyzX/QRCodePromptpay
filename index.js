@@ -17,7 +17,15 @@ const server = app.listen(3030, () => {
 });
 
 app.get('/', (req, res) => {
-    fs.readFile('index.html');
+    fs.readFile('index.html', null,(err, data) => {
+        if(err){
+            res.writeHead(404);
+            res.write('Whoops! File not found!');
+        } else {
+            res.write(data);
+        }
+        res.end();
+    });
 });
 
 app.post('/generateQR', (req, res) => {
