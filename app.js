@@ -37,7 +37,7 @@ function generateQRCode(){
     const amountVal = parseFloat($("#amount").val());
     $.ajax({
         method: 'post',
-        url: 'http://localhost:3030/generateQR',
+        url: 'https://victorious-puce-gloves.cyclic.cloud/generateQR',
         data: {
             promptpay: promptpayVal,
             amount: amountVal
