@@ -4,6 +4,7 @@ const generatePayload = require('promptpay-qr');
 const bodyParser = require('body-parser');
 const _ = require('lodash');
 const cors = require('cors');
+const fs = require('fs');
 
 const app = express();
 
@@ -13,6 +14,10 @@ app.use(cors());
 
 const server = app.listen(3030, () => {
     console.log('server is running...')
+});
+
+app.get('/', (req, res) => {
+    fs.readFile('index.html');
 });
 
 app.post('/generateQR', (req, res) => {
